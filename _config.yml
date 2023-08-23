@@ -11,7 +11,7 @@ title                    : "Mostafa Kaviri"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
-url                      : https://mostafakaviri.github.io
+url                      : "https://mostafakaviri.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "mostafakaviri/mostafakaviri.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
