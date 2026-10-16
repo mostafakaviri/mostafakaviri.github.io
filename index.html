@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostafa Kaviri</title>
+<meta name="description" content="Mostafa Kaviri, Robotics and Control Engineer: motion control, MPC, ROS 2 navigation and physical human-robot interaction.">
+<meta property="og:title" content="Mostafa Kaviri, Robotics & Control Engineer">
+<meta property="og:description" content="Motion control, MPC, ROS 2 navigation and physical human-robot interaction.">
+<meta property="og:image" content="https://mostafakaviri.github.io/images/hri-sim.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23003399%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EMK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--soft:#f4f6fb;--ink:#0f172a;--muted:#5b6476;--line:#e3e7ef;--accent:#003399;--accent-soft:#e8eefc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1117;--soft:#141a23;--ink:#e8ecf3;--muted:#9aa4b5;--line:#253041;--accent:#7aa2ff;--accent-soft:#17233d}}
+:root[data-theme="dark"]{--bg:#0d1117;--soft:#141a23;--ink:#e8ecf3;--muted:#9aa4b5;--line:#253041;--accent:#7aa2ff;--accent-soft:#17233d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{letter-spacing:.02em}nav .links{display:flex;gap:22px;font-size:14px}nav .links a{color:var(--muted)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);font:inherit;padding:6px 12px;cursor:pointer}
+@media(max-width:640px){.menu{display:block}nav .links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}nav .links a{padding:14px 20px;border-top:1px solid var(--line)}nav.open .links{display:flex}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:18px}.badge i{width:8px;height:8px;border-radius:50%;background:#1aa36b}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:36px}@media(max-width:760px){.about{grid-template-columns:1fr;gap:10px}}.about p{margin:0 0 14px;color:var(--muted)}
+footer a{color:var(--muted)}
+.hero{padding-top:72px;padding-bottom:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+h1{font-size:clamp(34px,5vw,50px);line-height:1.1;margin:10px 0 16px;letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:18px;max-width:34em}
+.btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{padding:11px 18px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid var(--accent)}
+.btn.primary{background:var(--accent);color:#fff}.btn:hover{text-decoration:none;opacity:.9}
+.hero img{width:100%;border-radius:14px;border:1px solid var(--line)}
+.hero figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}.sub{color:var(--muted);margin:0 0 30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--accent-soft);color:var(--accent);padding:5px 12px;border-radius:999px;font-size:14px;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img,.card svg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--bg)}
+.card .body{padding:20px 22px 24px}.card h3{margin:0 0 4px;font-size:19px}.card .meta{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:10px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}.card ul{margin:0;padding-left:18px;font-size:15px}
+.timeline{display:grid;gap:26px}.item{display:grid;grid-template-columns:170px 1fr;gap:20px}
+@media(max-width:640px){.item{grid-template-columns:1fr;gap:2px}}
+.item .when{color:var(--muted);font-size:14px;padding-top:3px}.item h3{margin:0;font-size:17px}.item .org{color:var(--accent);font-size:14px;margin-bottom:6px}
+.item ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:760px){.skills{grid-template-columns:1fr}}
+.skills div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px}.skills h4{margin:0 0 8px;font-size:15px}.skills p{margin:0;color:var(--muted);font-size:14px}
+.pubs li{margin-bottom:10px;color:var(--muted);font-size:15px}.pubs b{color:var(--ink)}
+.contact{background:var(--accent);color:#fff;border-radius:16px;padding:40px;text-align:center;margin:56px 0}
+.contact h2{color:#fff}.contact p{opacity:.85}.contact a{color:#fff;font-weight:600}
+footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap"><b>Mostafa Kaviri</b><button class="menu" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">Menu</button><div class="links" onclick="document.getElementById('nav').classList.remove('open')"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#publications">Publications</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="badge"><i></i>Available from January 2027 for roles in the Netherlands</div>
+    <div class="eyebrow">Robotics &amp; Control Engineer</div>
+    <h1>I build controllers that work where models meet hardware.</h1>
+    <p class="lead">I work on motion control, Model Predictive Control and ROS&nbsp;2 navigation, currently for a smart autonomous wheelchair. I am finishing an M.Sc. in Mechanical Engineering at McGill, with research in physical human–robot co-manipulation. My goal is medical and assistive robotics.</p>
+    <div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <figure style="margin:0"><img src="images/hri-sim.jpg" alt="Simulated Sawyer cobot physically coupled to a musculoskeletal human model in MuJoCo"><figcaption>Cobot coupled to a musculoskeletal arm model in MuJoCo, from my M.Sc. research.</figcaption></figure>
+</header>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2><p class="sub">Control engineer, finishing an M.Sc. at McGill.</p>
+  <div class="about">
+    <div><p>I like control problems where the model is never quite right: a wheelchair carrying a passenger whose weight changes, a quadruped picking up a payload, a cobot sharing a load with a person whose hand trembles. My work is building models good enough to control with, and controllers robust enough to cope with what the models miss.</p></div>
+    <div><p>Today I work remotely from Canada as a Robotics and Control Engineer at a robotics startup, on navigation and motion control for a smart wheelchair. Before that I built a medical device prototype from circuit to app. I want to bring this mix of control theory and hands-on engineering to a medical or assistive robotics team.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Selected projects</h2><p class="sub">Control and robotics work across industry and research.</p>
+  <div class="grid">
+    <article class="card">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Navigation pipeline: sensors, state estimation, localization, planning, MPPI control, wheelchair">
+        <rect width="640" height="360" fill="var(--accent-soft)"/>
+        <g font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+          <g fill="var(--bg)" stroke="var(--accent)" stroke-width="2">
+            <rect x="30" y="70" width="150" height="56" rx="10"/><rect x="245" y="70" width="150" height="56" rx="10"/><rect x="460" y="70" width="150" height="56" rx="10"/>
+            <rect x="460" y="230" width="150" height="56" rx="10"/><rect x="245" y="230" width="150" height="56" rx="10"/><rect x="30" y="230" width="150" height="56" rx="10"/>
+          </g>
+          <g fill="var(--ink)"><text x="105" y="103">Odometry + IMU</text><text x="320" y="103">EKF fusion</text><text x="535" y="103">Localization</text><text x="535" y="263">Global planner</text><text x="320" y="263">MPPI controller</text><text x="105" y="263">Wheelchair</text></g>
+          <g stroke="var(--accent)" stroke-width="2.5" fill="none"><path d="M180 98h60M395 98h60M535 126v99M460 258h-60M245 258h-60M105 230v-99"/></g>
+        </g>
+        <text x="320" y="190" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="var(--muted)">LiDAR map · costmaps · behavior-tree recovery</text>
+      </svg>
+      <div class="body"><h3>Autonomous smart wheelchair</h3><div class="meta">Industry · 2026–present</div>
+        <p>Navigation and motion control for an electric wheelchair at a robotics startup, built on ROS&nbsp;2 and Nav2.</p>
+        <ul><li>LiDAR localization and global path planning</li><li>Sensor fusion of wheel odometry and IMU for state estimation</li><li>MPPI controller tuning for smooth tracking and obstacle avoidance</li><li>Dynamics model identified from prototype data, used in simulation</li></ul></div>
+    </article>
+    <article class="card">
+      <img src="images/hri-frontal.jpg" alt="Front view of the coupled human-robot simulation">
+      <div class="body"><h3>Physical human–robot co-manipulation</h3><div class="meta">M.Sc. thesis · McGill NeuRoc Lab</div>
+        <p>How should a cobot share a load with a person who has tremor? I tuned a Sawyer cobot under admittance–impedance control while coupled to a MyoSuite arm model.</p>
+        <ul><li>Mapped the trade-off between load support, intent following and tremor attenuation</li><li>Basis for an assistive co-manipulation strategy</li><li>Moving from simulation to a physical robot</li></ul></div>
+    </article>
+    <article class="card">
+      <img src="images/quadruped-mpc.jpg" alt="Plots of adaptive MPC velocity tracking and online mass estimation for a quadruped">
+      <div class="body"><h3>Real-time MPC for a quadruped robot</h3><div class="meta">B.Sc. thesis · Amirkabir University</div>
+        <p>Full-body Newton–Euler model of a quadruped, real-time MPC in MuJoCo, and reinforcement learning to correct dynamics the analytical model misses.</p>
+        <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change</li></ul></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 640 360" role="img" aria-label="Blood flow restriction device diagram: cuff, pressure sensing, firmware, desktop app">
+        <rect width="640" height="360" fill="var(--accent-soft)"/>
+        <g font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
+          <circle cx="140" cy="180" r="70" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/><text x="140" y="176" fill="var(--ink)">Limb cuff</text><text x="140" y="196" font-size="12" font-weight="400" fill="var(--muted)">inflation</text>
+          <g fill="var(--bg)" stroke="var(--accent)" stroke-width="2"><rect x="270" y="90" width="150" height="56" rx="10"/><rect x="270" y="214" width="150" height="56" rx="10"/><rect x="460" y="152" width="150" height="56" rx="10"/></g>
+          <g fill="var(--ink)"><text x="345" y="123">Pressure sensing</text><text x="345" y="247">MCU firmware</text><text x="535" y="185">Desktop app</text></g>
+          <g stroke="var(--accent)" stroke-width="2.5" fill="none"><path d="M208 160l60-30M345 146v66M268 242l-60-38M420 242l40-30M420 118l40 34"/></g>
+        </g>
+      </svg>
+      <div class="body"><h3>Blood flow restriction training device</h3><div class="meta">R&amp;D · New Technologies Research Center</div>
+        <p>A working medical device prototype that sets cuff pressure from each user's measured limb occlusion pressure.</p>
+        <ul><li>Analog circuits and pressure-signal processing</li><li>STM32 and ESP32 firmware, desktop control application</li><li>Cuff inflation mechanism and mechanical frame</li></ul></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2><p class="sub">Industry, research and teaching.</p>
+  <div class="timeline">
+    <div class="item"><div class="when">04/2026 – present</div><div><h3>Robotics &amp; Control Engineer</h3><div class="org">Rahpoyan Hoshmand Mana, robotics startup (hybrid)</div><ul><li>Autonomous navigation of a smart wheelchair with ROS&nbsp;2 and Nav2</li><li>State estimation, MPPI controller tuning and simulation scenarios</li><li>Dynamics modeling from experimental data and a validated simulation model</li></ul></div></div>
+    <div class="item"><div class="when">01/2025 – present</div><div><h3>Graduate Researcher</h3><div class="org">NeuRoc Lab, McGill University</div><ul><li>Physical human–robot co-manipulation in MuJoCo with a musculoskeletal model</li><li>Paper accepted at ICNR; two journal papers in preparation</li></ul></div></div>
+    <div class="item"><div class="when">09/2025 – present</div><div><h3>Teaching Assistant</h3><div class="org">Mechanical Engineering, McGill University</div><ul><li>Four courses, including Control Systems and Applied Electronics &amp; Instrumentation</li></ul></div></div>
+    <div class="item"><div class="when">12/2021 – 10/2022</div><div><h3>R&amp;D Robotics Engineer</h3><div class="org">New Technologies Research Center, Amirkabir University</div><ul><li>Blood flow restriction device prototype: electronics, firmware and control software</li></ul></div></div>
+    <div class="item"><div class="when">05/2020 – 12/2020</div><div><h3>Mechanical Design Engineer</h3><div class="org">Press Badaneh Azar</div><ul><li>Heating chamber design for an industrial painting machine</li></ul></div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2><p class="sub">What I bring to a control or robotics team.</p>
+  <div class="skills">
+    <div><h4>Control &amp; optimization</h4><p>Model Predictive Control, optimal control, admittance and impedance control, feedback design, MATLAB/Simulink</p></div>
+    <div><h4>Robotics &amp; simulation</h4><p>ROS&nbsp;2, Nav2, MuJoCo, Gazebo, dynamic modeling, reinforcement learning for control</p></div>
+    <div><h4>Embedded &amp; programming</h4><p>STM32, ESP32, analog circuits, signal processing; Python, C/C++, MATLAB</p></div>
+  </div>
+</div></section>
+
+<section id="publications"><div class="wrap">
+  <h2>Publications</h2><p class="sub">One book chapter, one accepted conference paper, one IEEE journal paper under review, two more under submission.</p>
+  <ul class="pubs">
+    <li><b>Kaviri, M.</b>, Fesharaki, A. J., &amp; Sadeghnejad, S. (2023). Soft robotics in medical applications: state of the art, challenges, and recent advances. <i>Medical and Healthcare Robotics</i>, Elsevier. Book chapter.</li>
+    <li>Jafarian, P., <b>Kaviri, M.</b>, Suleiman, W., &amp; Durandau, G. A new simulation framework for the design of human–robot controllers in elderly care. <i>ICNR</i>. Accepted.</li>
+    <li>Ahmadi, A., Gorji, M., <b>Kaviri, M.</b>, et al. A sim-to-real pre-trained learning framework for autonomous control of a fish-inspired robot with MPC and reinforcement learning. <i>IEEE Trans. Control Systems Technology</i>. Under review.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Education &amp; awards</h2><p class="sub">Two engineering degrees and three McGill awards.</p>
+  <div class="timeline">
+    <div class="item"><div class="when">01/2025 – present</div><div><h3>M.Sc. Mechanical Engineering, McGill University</h3><div class="org">Thesis expected 11/2026</div></div></div>
+    <div class="item"><div class="when">09/2018 – 09/2023</div><div><h3>B.Sc. Mechanical Engineering, minor in Computer Engineering</h3><div class="org">Amirkabir University of Technology</div></div></div>
+  </div>
+  <div class="chips" style="margin-top:26px"><span class="chip">Samit &amp; Reshma Sharma Excellence Award, McGill</span><span class="chip">McGill Graduate Excellence Award (twice)</span><span class="chip">Archambault Graduate Award, McGill</span></div>
+</div></section>
+
+<div class="wrap" id="contact"><div class="contact">
+  <h2>Let's talk</h2><p>Available from January 2027 for control, robotics and mechatronics roles in the Netherlands.</p>
+  <p><a href="mailto:mostafa.kaviri1378@gmail.com">mostafa.kaviri1378@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a></p>
+</div></div>
+<footer>© 2026 Mostafa Kaviri · <a href="mailto:mostafa.kaviri1378@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a></footer>
+</body>
+</html>
