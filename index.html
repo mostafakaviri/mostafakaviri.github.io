@@ -27,7 +27,6 @@ nav b{letter-spacing:.02em}nav .links{display:flex;gap:22px;font-size:14px}nav .
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:18px}.badge i{width:8px;height:8px;border-radius:50%;background:#1aa36b}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:36px}@media(max-width:760px){.about{grid-template-columns:1fr;gap:10px}}.about p{margin:0 0 14px;color:var(--muted)}
 footer a{color:var(--muted)}
-.videos{margin-top:34px}.videos h3{margin:0 0 4px;font-size:19px}.videos .sub{margin-bottom:18px}.videos figure{margin:0 0 22px}.videos video{width:100%;border-radius:12px;border:1px solid var(--line);display:block;background:#000}.videos figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .hero{padding-top:72px;padding-bottom:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
 @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}}
 .eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
@@ -43,7 +42,8 @@ h2{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}.sub{color:var(--muted);m
 .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--accent-soft);color:var(--accent);padding:5px 12px;border-radius:999px;font-size:14px;font-weight:500}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}@media(max-width:760px){.grid{grid-template-columns:1fr}}
 .card{background:var(--soft);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.card img,.card svg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--bg)}
+a.card{color:inherit;text-decoration:none;transition:transform .15s,border-color .15s}a.card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--accent)}.card .more{display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px}
+.card img,.card svg,.card video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--bg)}
 .card .body{padding:20px 22px 24px}.card h3{margin:0 0 4px;font-size:19px}.card .meta{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:10px}
 .card p{margin:0 0 12px;color:var(--muted);font-size:15px}.card ul{margin:0;padding-left:18px;font-size:15px}
 .timeline{display:grid;gap:26px}.item{display:grid;grid-template-columns:170px 1fr;gap:20px}
@@ -83,7 +83,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 <section id="projects"><div class="wrap">
   <h2>Selected projects</h2><p class="sub">Control and robotics work across industry and research.</p>
   <div class="grid">
-    <article class="card">
+    <a class="card" href="projects/wheelchair.html">
       <svg viewBox="0 0 640 360" role="img" aria-label="Navigation pipeline: sensors, state estimation, localization, planning, MPPI control, wheelchair">
         <rect width="640" height="360" fill="var(--accent-soft)"/>
         <g font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
@@ -98,21 +98,21 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
       </svg>
       <div class="body"><h3>Autonomous smart wheelchair</h3><div class="meta">Industry · 2026–present</div>
         <p>Navigation and motion control for an electric wheelchair at a robotics startup, built on ROS&nbsp;2 and Nav2.</p>
-        <ul><li>LiDAR localization and global path planning</li><li>Sensor fusion of wheel odometry and IMU for state estimation</li><li>MPPI controller tuning for smooth tracking and obstacle avoidance</li><li>Dynamics model identified from prototype data, used in simulation</li></ul></div>
-    </article>
-    <article class="card">
+        <ul><li>LiDAR localization and global path planning</li><li>Sensor fusion of wheel odometry and IMU for state estimation</li><li>MPPI controller tuning for smooth tracking and obstacle avoidance</li><li>Dynamics model identified from prototype data, used in simulation</li></ul><span class="more">See the project →</span></div>
+    </a>
+    <a class="card" href="projects/co-manipulation.html">
       <img src="images/hri-frontal.jpg" alt="Front view of the coupled human-robot simulation">
       <div class="body"><h3>Physical human–robot co-manipulation</h3><div class="meta">M.Sc. thesis · McGill NeuRoc Lab</div>
         <p>How should a cobot share a load with a person who has tremor? I tuned a Sawyer cobot under admittance–impedance control while coupled to a MyoSuite arm model.</p>
-        <ul><li>Mapped the trade-off between load support, intent following and tremor attenuation</li><li>Basis for an assistive co-manipulation strategy</li><li>Moving from simulation to a physical robot</li></ul></div>
-    </article>
-    <article class="card">
-      <img src="images/quadruped-mpc.jpg" alt="Plots of adaptive MPC velocity tracking and online mass estimation for a quadruped">
+        <ul><li>Mapped the trade-off between load support, intent following and tremor attenuation</li><li>Basis for an assistive co-manipulation strategy</li><li>Moving from simulation to a physical robot</li></ul><span class="more">See the project →</span></div>
+    </a>
+    <a class="card" href="projects/quadruped.html">
+      <video src="videos/quadruped-card.mp4" poster="videos/quadruped-card.jpg" autoplay muted loop playsinline aria-label="Quadruped trotting while carrying a payload"></video>
       <div class="body"><h3>Real-time MPC for a quadruped robot</h3><div class="meta">B.Sc. thesis · Amirkabir University</div>
         <p>Full-body Newton–Euler model of a quadruped, real-time MPC in MuJoCo, and reinforcement learning to correct dynamics the analytical model misses.</p>
-        <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change (<a href="#quadruped-videos">videos below</a>)</li></ul></div>
-    </article>
-    <article class="card">
+        <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change</li></ul><span class="more">See the project →</span></div>
+    </a>
+    <a class="card" href="projects/bfr-device.html">
       <svg viewBox="0 0 640 360" role="img" aria-label="Blood flow restriction device diagram: cuff, pressure sensing, firmware, desktop app">
         <rect width="640" height="360" fill="var(--accent-soft)"/>
         <g font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
@@ -124,14 +124,8 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
       </svg>
       <div class="body"><h3>Blood flow restriction training device</h3><div class="meta">R&amp;D · New Technologies Research Center</div>
         <p>A working medical device prototype that sets cuff pressure from each user's measured limb occlusion pressure.</p>
-        <ul><li>Analog circuits and pressure-signal processing</li><li>STM32 and ESP32 firmware, desktop control application</li><li>Cuff inflation mechanism and mechanical frame</li></ul></div>
-    </article>
-  </div>
-  <div class="videos" id="quadruped-videos">
-    <h3>Quadruped MPC in action</h3>
-    <p class="sub">The same robot carries a 3.5&nbsp;kg payload it was not told about. Left: nominal MPC. Right: MPC with a learned estimator that corrects its model online.</p>
-    <figure><video src="videos/quadruped-trot_side_by_side.mp4" poster="videos/quadruped-trot_side_by_side.jpg" controls muted loop playsinline preload="none"></video><figcaption>Trotting with the payload.</figcaption></figure>
-    <figure><video src="videos/quadruped-stand_side_by_side.mp4" poster="videos/quadruped-stand_side_by_side.jpg" controls muted loop playsinline preload="none"></video><figcaption>Standing and stepping in place with the payload.</figcaption></figure>
+        <ul><li>Analog circuits and pressure-signal processing</li><li>STM32 and ESP32 firmware, desktop control application</li><li>Cuff inflation mechanism and mechanical frame</li></ul><span class="more">See the project →</span></div>
+    </a>
   </div>
 </div></section>
 
