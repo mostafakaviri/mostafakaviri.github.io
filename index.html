@@ -27,6 +27,7 @@ nav b{letter-spacing:.02em}nav .links{display:flex;gap:22px;font-size:14px}nav .
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin-bottom:18px}.badge i{width:8px;height:8px;border-radius:50%;background:#1aa36b}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:36px}@media(max-width:760px){.about{grid-template-columns:1fr;gap:10px}}.about p{margin:0 0 14px;color:var(--muted)}
 footer a{color:var(--muted)}
+.videos{margin-top:34px}.videos h3{margin:0 0 4px;font-size:19px}.videos .sub{margin-bottom:18px}.videos figure{margin:0 0 22px}.videos video{width:100%;border-radius:12px;border:1px solid var(--line);display:block;background:#000}.videos figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .hero{padding-top:72px;padding-bottom:56px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
 @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}}
 .eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
@@ -109,7 +110,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
       <img src="images/quadruped-mpc.jpg" alt="Plots of adaptive MPC velocity tracking and online mass estimation for a quadruped">
       <div class="body"><h3>Real-time MPC for a quadruped robot</h3><div class="meta">B.Sc. thesis · Amirkabir University</div>
         <p>Full-body Newton–Euler model of a quadruped, real-time MPC in MuJoCo, and reinforcement learning to correct dynamics the analytical model misses.</p>
-        <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change</li></ul></div>
+        <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change (<a href="#quadruped-videos">videos below</a>)</li></ul></div>
     </article>
     <article class="card">
       <svg viewBox="0 0 640 360" role="img" aria-label="Blood flow restriction device diagram: cuff, pressure sensing, firmware, desktop app">
@@ -125,6 +126,12 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
         <p>A working medical device prototype that sets cuff pressure from each user's measured limb occlusion pressure.</p>
         <ul><li>Analog circuits and pressure-signal processing</li><li>STM32 and ESP32 firmware, desktop control application</li><li>Cuff inflation mechanism and mechanical frame</li></ul></div>
     </article>
+  </div>
+  <div class="videos" id="quadruped-videos">
+    <h3>Quadruped MPC in action</h3>
+    <p class="sub">The same robot carries a 3.5&nbsp;kg payload it was not told about. Left: nominal MPC. Right: MPC with a learned estimator that corrects its model online.</p>
+    <figure><video src="videos/quadruped-trot_side_by_side.mp4" poster="videos/quadruped-trot_side_by_side.jpg" controls muted loop playsinline preload="none"></video><figcaption>Trotting with the payload.</figcaption></figure>
+    <figure><video src="videos/quadruped-stand_side_by_side.mp4" poster="videos/quadruped-stand_side_by_side.jpg" controls muted loop playsinline preload="none"></video><figcaption>Standing and stepping in place with the payload.</figcaption></figure>
   </div>
 </div></section>
 
