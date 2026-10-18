@@ -68,12 +68,13 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
   <div class="ptitle"><div class="eyebrow">B.Sc. thesis · Amirkabir University</div><h1>Real-time MPC for a quadruped robot</h1><p class="lead">A quadruped that keeps walking when it is handed a payload it was not told about.</p></div>
   <div class="pgrid">
     <div class="block"><h2>The problem</h2><p>Model Predictive Control is only as good as its model. When a legged robot picks up an unknown load, the model is suddenly wrong: the robot slows down, tilts and tracks its commands poorly.</p></div>
-    <div class="block"><h2>What I did</h2><ul><li>Full-body Newton–Euler dynamic model of the quadruped</li><li>Real-time MPC in MuJoCo for trotting and standing</li><li>A learned (reinforcement learning) estimator that infers the model error online and corrects the MPC model</li></ul></div>
+    <div class="block"><h2>What I did</h2><ul><li>Full-body Newton–Euler dynamic model of the quadruped</li><li>Real-time MPC in MuJoCo for walking and running</li><li>An online payload identifier that estimates the added mass and center-of-mass shift and updates the MPC model</li></ul></div>
   </div>
-  <div class="block" style="margin-top:28px"><h2>Results</h2><p>In the videos the same robot gets a 3.5&nbsp;kg payload partway through. With the nominal model (left) it falls behind the commanded speed and tilts more; with the learned correction (right) it stays closer to the command and holds its posture.</p></div>
+  <div class="block" style="margin-top:28px"><h2>Results</h2><p>In each video the same robot gets a payload partway through, walking or running. With the nominal model (left) it falls behind the commanded speed, and with 10&nbsp;kg on its back it falls over. With the payload identifier (right) it estimates the new load within seconds and keeps tracking the command upright.</p></div>
   <div class="media">
-<figure><video src="../videos/quadruped-trot_side_by_side.mp4" poster="../videos/quadruped-trot_side_by_side.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Trotting with the payload. Left: nominal MPC. Right: MPC with the learned estimator.</figcaption></figure>
-<figure><video src="../videos/quadruped-stand_side_by_side.mp4" poster="../videos/quadruped-stand_side_by_side.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Standing and stepping in place with the payload.</figcaption></figure>
+<figure><video src="../videos/quadruped-run_10kg.mp4" poster="../videos/quadruped-run_10kg.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Running at 2.4&nbsp;m/s with a 10&nbsp;kg payload. Left: nominal MPC. Right: MPC with the payload identifier.</figcaption></figure>
+<figure><video src="../videos/quadruped-walk_10kg.mp4" poster="../videos/quadruped-walk_10kg.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Walking at 1.5&nbsp;m/s with a 10&nbsp;kg payload.</figcaption></figure>
+<figure><video src="../videos/quadruped-run_3p5kg.mp4" poster="../videos/quadruped-run_3p5kg.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Running at 2.4&nbsp;m/s with a 3.5&nbsp;kg payload.</figcaption></figure>
   </div>
   <div class="next"><a href="co-manipulation.html">← Physical human–robot co-manipulation</a><a href="bfr-device.html">Blood flow restriction training device →</a></div>
 </main>
