@@ -57,7 +57,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 .crumb{padding-top:36px;font-size:14px}.ptitle{padding:14px 0 30px}.ptitle h1{font-size:clamp(30px,4.5vw,44px);margin:6px 0 10px}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px}@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
 .block{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:22px 24px}.block h2{font-size:20px;margin:0 0 8px}.block p,.block li{color:var(--muted);font-size:15px}.block ul{margin:0;padding-left:18px}.block p{margin:0}
-.media{margin:28px 0 0}.media figure{margin:0 0 26px}.media img,.media video,.media svg{width:100%;border-radius:12px;border:1px solid var(--line);display:block}.media video{background:#000}.media figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.media{margin:28px 0 0}.media figure{margin:0 0 26px}.media img,.media video,.media svg{width:100%;background:#fff;border-radius:12px;border:1px solid var(--line);display:block}.media video{background:#000}.media .g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.media .g2 figure{margin:0 0 6px}.media .mh{margin:34px 0 6px;font-size:19px}.media .mp{color:var(--muted);margin:0 0 18px}.media .g2.hw{grid-template-columns:.688fr 1.334fr}.media .g2+.g2{margin-top:20px}@media(max-width:640px){.media .g2,.media .g2.hw{grid-template-columns:1fr}}.media figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .next{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:30px 0 10px;border-top:1px solid var(--line);margin-top:20px;font-weight:600}
 </style>
 </head>
@@ -70,17 +70,24 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
     <div class="block"><h2>The problem</h2><p>Blood flow restriction training only works safely when cuff pressure is set for each person, from their own limb occlusion pressure, rather than one fixed value.</p></div>
     <div class="block"><h2>What I did</h2><ul><li>Cuff inflation mechanism and mechanical frame</li><li>Analog circuits and pressure-signal processing to estimate limb occlusion pressure</li><li>STM32 and ESP32 firmware</li><li>Desktop control application</li></ul></div>
   </div>
-  <div class="block" style="margin-top:28px"><h2>Results</h2><p>A working prototype that measures each user and sets the cuff pressure from that measurement, built in a small team.</p></div>
+  <div class="block" style="margin-top:28px"><h2>Results</h2><p>A working prototype, built in a small team, that measures each user's limb occlusion pressure and sets the cuff pressure from it. It runs from its own touchscreen or from a desktop app.</p></div>
   <div class="media">
-<figure><svg viewBox="0 0 640 360" role="img" aria-label="Blood flow restriction device diagram: cuff, pressure sensing, firmware, desktop app">
-        <rect width="640" height="360" fill="var(--accent-soft)"/>
-        <g font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle">
-          <circle cx="140" cy="180" r="70" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/><text x="140" y="176" fill="var(--ink)">Limb cuff</text><text x="140" y="196" font-size="12" font-weight="400" fill="var(--muted)">inflation</text>
-          <g fill="var(--bg)" stroke="var(--accent)" stroke-width="2"><rect x="270" y="90" width="150" height="56" rx="10"/><rect x="270" y="214" width="150" height="56" rx="10"/><rect x="460" y="152" width="150" height="56" rx="10"/></g>
-          <g fill="var(--ink)"><text x="345" y="123">Pressure sensing</text><text x="345" y="247">MCU firmware</text><text x="535" y="185">Desktop app</text></g>
-          <g stroke="var(--accent)" stroke-width="2.5" fill="none"><path d="M208 160l60-30M345 146v66M268 242l-60-38M420 242l40-30M420 118l40 34"/></g>
-        </g>
-      </svg><figcaption>How the device fits together.</figcaption></figure>
+<figure><img src="../images/bfr-device.jpg" alt="The BFR device: control box with touchscreen between two limb cuffs" loading="lazy"><figcaption>The finished device with its two limb cuffs.</figcaption></figure>
+<div class="g2 hw">
+<figure><img src="../images/bfr-inside.jpg" alt="Inside the control box: circuit boards, pump, valves and tubing" loading="lazy"><figcaption>Inside the control box: electronics, pump and valves.</figcaption></figure>
+<figure><img src="../images/bfr-prototype.jpg" alt="Early prototype with cuff, pressure gauge, controller box and power supply" loading="lazy"><figcaption>An earlier prototype on the bench.</figcaption></figure>
+</div>
+<div class="g2">
+<figure><img src="../images/bfr-screen.png" alt="Device touchscreen showing pressure, percentage and limb occlusion pressure" loading="lazy"><figcaption>The device screen: cuff pressure, target percentage and the measured limb occlusion pressure.</figcaption></figure>
+<figure><img src="../images/bfr-app.png" alt="Desktop control application" loading="lazy"><figcaption>The desktop control app.</figcaption></figure>
+</div>
+<h3 class="mh">Signal processing</h3>
+<p class="mp">The limb occlusion pressure is estimated from the cuff pressure as it deflates. The raw signal is filtered, then the small pulses riding on it are separated out.</p>
+<div class="g2">
+<figure><img src="../images/bfr-signal-raw.png" alt="Raw cuff pressure signal during deflation" loading="lazy"><figcaption>Raw cuff pressure.</figcaption></figure>
+<figure><img src="../images/bfr-signal-lowpass.png" alt="Cuff pressure after a 40 Hz low-pass filter" loading="lazy"><figcaption>After a low-pass filter.</figcaption></figure>
+</div>
+<figure><img src="../images/bfr-signal-oscillometric.png" alt="High-pass filtered oscillometric pulses" loading="lazy" style="max-width:720px"><figcaption>After a high-pass filter: the pulse oscillations used for the estimate.</figcaption></figure>
   </div>
   <div class="next"><a href="quadruped.html">← Real-time MPC for a quadruped robot</a><a href="wheelchair.html">Autonomous smart wheelchair →</a></div>
 </main>
