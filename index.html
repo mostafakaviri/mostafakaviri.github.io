@@ -56,6 +56,7 @@ a.card{color:inherit;text-decoration:none;transition:transform .15s,border-color
 .contact{background:var(--accent);color:#fff;border-radius:16px;padding:40px;text-align:center;margin:56px 0}
 .contact h2{color:#fff}.contact p{opacity:.85}.contact a{color:#fff;font-weight:600}
 footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
+.who{display:flex;align-items:center;gap:22px;margin-bottom:22px}.who img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex:none}.who h2{margin-top:0}
 </style>
 </head>
 <body>
@@ -72,7 +73,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 </header>
 
 <section id="about"><div class="wrap">
-  <h2>About me</h2><p class="sub">Control engineer, finishing an M.Sc. at McGill.</p>
+  <div class="who"><img src="images/profile.jpg" alt="Mostafa Kaviri" width="120" height="120"><div><h2>About me</h2><p class="sub">Control engineer, finishing an M.Sc. at McGill.</p></div></div>
   <div class="about">
     <div><p>I like control problems where the model is never quite right: a wheelchair carrying a passenger whose weight changes, a quadruped picking up a payload, a cobot sharing a load with a person whose hand trembles. My work is building models good enough to control with, and controllers robust enough to cope with what the models miss.</p></div>
     <div><p>Most recently I worked as a Robotics Engineer at a robotics startup, on navigation and motion control for a smart wheelchair. Before that I built a medical device prototype from circuit to app. I want to bring this mix of control theory and hands-on engineering to a robotics team, wherever control and dynamics matter.</p></div>
