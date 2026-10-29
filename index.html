@@ -52,7 +52,7 @@ a.card{color:inherit;text-decoration:none;transition:transform .15s,border-color
 .item ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:760px){.skills{grid-template-columns:1fr}}
 .skills div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px}.skills h4{margin:0 0 8px;font-size:15px}.skills p{margin:0;color:var(--muted);font-size:14px}
-.pubs li{margin-bottom:10px;color:var(--muted);font-size:15px}.pubs b{color:var(--ink)}
+.pubh{font-size:15px;margin:18px 0 8px;color:var(--ink)}.pubs li{margin-bottom:10px;color:var(--muted);font-size:15px}.pubs b{color:var(--ink)}
 .contact{background:var(--accent);color:#fff;border-radius:16px;padding:40px;text-align:center;margin:56px 0}
 .contact h2{color:#fff}.contact p{opacity:.85}.contact a{color:#fff;font-weight:600}
 footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
@@ -65,18 +65,18 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 <header class="wrap hero">
   <div>
     <div class="eyebrow">Robotics &amp; Control Engineer</div>
-    <h1>I build controllers that work where models meet hardware.</h1>
-    <p class="lead">I work on motion control, Model Predictive Control, sensor fusion and ROS&nbsp;2 navigation, most recently GNSS-denied indoor navigation for a smart autonomous wheelchair. I am finishing an M.Sc. in Mechanical Engineering at McGill, with research in physical human–robot co-manipulation.</p>
+    <h1>Robotics and control, from dynamic models to working systems.</h1>
+    <p class="lead">I am a robotics and control engineer in the final year of an M.Sc. in Mechanical Engineering at McGill University. I work on model-based control, including model predictive control (MPC), state estimation and autonomous navigation: most recently GNSS-denied indoor navigation and sensor fusion for a smart wheelchair, and in my thesis, physical human–robot co-manipulation.</p>
     <div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
   </div>
   <figure style="margin:0"><img src="images/hri-sim.jpg" alt="Simulated Sawyer cobot physically coupled to a musculoskeletal human model in MuJoCo"><figcaption>Cobot coupled to a musculoskeletal arm model in MuJoCo, from my M.Sc. research.</figcaption></figure>
 </header>
 
 <section id="about"><div class="wrap">
-  <div class="who"><img src="images/profile.jpg" alt="Mostafa Kaviri" width="120" height="120"><div><h2>About me</h2><p class="sub">Robotics and Control Engineer, finishing an M.Sc. at McGill.</p></div></div>
+  <div class="who"><img src="images/profile.jpg" alt="Mostafa Kaviri" width="120" height="120"><div><h2>About me</h2><p class="sub">Robotics and Control Engineer, in the final year of an M.Sc. at McGill.</p></div></div>
   <div class="about">
-    <div><p>I like control problems where the model is never quite right: a wheelchair carrying a passenger whose weight changes, a quadruped picking up a payload, a cobot sharing a load with a person whose hand trembles. My work is building models good enough to control with, and controllers robust enough to cope with what the models miss.</p></div>
-    <div><p>Most recently I worked as a Robotics Engineer at a robotics startup, on GNSS-denied navigation, sensor fusion and motion control for a smart wheelchair. Before that I built a medical device prototype from circuit to app. I want to bring this mix of control theory and hands-on engineering to a robotics team, wherever guidance, navigation, control and dynamics matter.</p></div>
+    <div><p>I like control problems where the model is never quite right: a wheelchair carrying passengers of different weights, a quadruped picking up a payload, a cobot sharing a load with a person whose hand trembles. My work is building models good enough to control with, and controllers robust enough to cope with what the models miss.</p></div>
+    <div><p>Most recently I worked as a Robotics Engineer at a robotics startup, on GNSS-denied navigation, sensor fusion and motion control for a smart wheelchair. Before that I built a medical device prototype from circuit to app. I want to keep developing, integrating and testing robotic systems where guidance, navigation, control and dynamics matter.</p></div>
   </div>
 </div></section>
 
@@ -92,25 +92,25 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
     <a class="card" href="projects/co-manipulation.html">
       <video src="videos/hri-03_controller.mp4" poster="videos/hri-03_controller.jpg" autoplay muted loop playsinline aria-label="Cobot and simulated person moving an object together"></video>
       <div class="body"><h3>Physical human–robot co-manipulation</h3><div class="meta">M.Sc. thesis · McGill NeuRoc Lab</div>
-        <p>How should a cobot share a load with a person who has tremor? I tuned a Sawyer cobot under admittance–impedance control while coupled to a MyoSuite arm model.</p>
+        <p>How should a cobot share a load with a person who has tremor? In simulation, I tuned and evaluated an admittance–impedance controller for a Sawyer cobot coupled to a MyoSuite musculoskeletal arm model.</p>
         <ul><li>Mapped the trade-off between load support, intent following and tremor attenuation</li><li>Basis for an assistive co-manipulation strategy</li><li>Moving from simulation to a physical robot</li></ul><span class="more">See the project →</span></div>
     </a>
     <a class="card" href="projects/quadruped.html">
       <video src="videos/quadruped-card.mp4" poster="videos/quadruped-card.jpg" autoplay muted loop playsinline aria-label="Quadruped running while carrying a 10 kg payload"></video>
       <div class="body"><h3>Real-time MPC for a quadruped robot</h3><div class="meta">B.Sc. thesis · Amirkabir University</div>
-        <p>Full-body dynamic model of a quadruped, real-time MPC in MuJoCo, and reinforcement learning to correct dynamics the analytical model misses.</p>
+        <p>Full-body dynamic model of a quadruped, real-time MPC in MuJoCo, and online payload identification that keeps the model accurate when the load changes.</p>
         <ul><li>Online payload estimation feeding the controller</li><li>Velocity tracking under a sudden load change</li></ul><span class="more">See the project →</span></div>
     </a>
     <a class="card" href="projects/fish-robot.html">
       <img src="images/fish-cad.jpg" alt="CAD model of the fish-inspired swimming robot" loading="lazy">
-      <div class="body"><h3>Fish-inspired swimming robot</h3><div class="meta">Research · paper under review</div>
+      <div class="body"><h3>Fish-inspired swimming robot</h3><div class="meta">Research · manuscript under review</div>
         <p>A robotic fish I designed and built end to end, used to test sim-to-real autonomous control in a water tank.</p>
         <ul><li>Mechanical design, fabrication and assembly</li><li>Electrical and circuit board design, sensor data handling</li><li>Digital controller implementation and all experiments</li></ul><span class="more">See the project →</span></div>
     </a>
     <a class="card" href="projects/bfr-device.html">
       <img src="images/bfr-device.jpg" alt="The blood flow restriction device: control box with touchscreen between two limb cuffs" loading="lazy">
       <div class="body"><h3>Blood flow restriction training device</h3><div class="meta">R&amp;D · New Technologies Research Center</div>
-        <p>A working medical device prototype that sets cuff pressure from each user's measured limb occlusion pressure.</p>
+        <p>A medical device prototype designed to set cuff pressure from each user's estimated limb occlusion pressure.</p>
         <ul><li>Analog circuits and pressure-signal processing</li><li>STM32 and ESP32 firmware, desktop control application</li><li>Cuff inflation mechanism and mechanical frame</li></ul><span class="more">See the project →</span></div>
     </a>
   </div>
@@ -130,23 +130,31 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 <section id="skills"><div class="wrap">
   <h2>Skills</h2><p class="sub">What I bring to a control or robotics team.</p>
   <div class="skills">
-    <div><h4>Control &amp; optimization</h4><p>Model Predictive Control, optimal control, admittance and impedance control, feedback design, MATLAB/Simulink</p></div>
+    <div><h4>Control &amp; optimization</h4><p>Model predictive control (MPC), optimal control, admittance and impedance control, feedback design, MATLAB/Simulink</p></div>
     <div><h4>Robotics &amp; simulation</h4><p>ROS&nbsp;2, Nav2, MuJoCo, Gazebo, dynamic modeling, reinforcement learning for control</p></div>
     <div><h4>Embedded &amp; programming</h4><p>STM32, ESP32, analog circuits, signal processing; Python, C/C++, MATLAB</p></div>
   </div>
 </div></section>
 
 <section id="publications"><div class="wrap">
-  <h2>Publications</h2><p class="sub">One book chapter, one conference paper, one IEEE journal paper under review, two more under submission.</p>
+  <h2>Publications</h2>
+  <h3 class="pubh">Published</h3>
   <ul class="pubs">
     <li><b>Kaviri, M.</b>, Fesharaki, A. J., &amp; Sadeghnejad, S. (2023). Soft robotics in medical applications: state of the art, challenges, and recent advances. <i>Medical and Healthcare Robotics</i>, Elsevier. Book chapter.</li>
-    <li>Jafarian, P., <b>Kaviri, M.</b>, Suleiman, W., &amp; Durandau, G. A new simulation framework for the design of human–robot controllers in elderly care. <i>ICNR</i>.</li>
-    <li>Ahmadi, A., Gorji, M., <b>Kaviri, M.</b>, et al. A sim-to-real pre-trained learning framework for autonomous control of a fish-inspired robot with MPC and reinforcement learning. <i>IEEE Trans. Control Systems Technology</i>. Under review.</li>
+    <li>Jafarian, P., <b>Kaviri, M.</b>, Suleiman, W., &amp; Durandau, G. A new simulation framework for the design of human–robot controllers in elderly care. <i>International Conference on NeuroRehabilitation (ICNR)</i>. Conference paper.</li>
+  </ul>
+  <h3 class="pubh">Under review</h3>
+  <ul class="pubs">
+    <li>Ahmadi, A., Gorji, M., <b>Kaviri, M.</b>, et al. A sim-to-real pre-trained learning framework for autonomous control of a fish-inspired robot with MPC and reinforcement learning. Manuscript under review at <i>IEEE Transactions on Control Systems Technology</i>.</li>
+  </ul>
+  <h3 class="pubh">In preparation</h3>
+  <ul class="pubs">
+    <li>Two journal manuscripts on physical human–robot co-manipulation from my M.Sc. research.</li>
   </ul>
 </div></section>
 
 <section><div class="wrap">
-  <h2>Education &amp; awards</h2><p class="sub">Two engineering degrees and three McGill awards.</p>
+  <h2>Education &amp; awards</h2>
   <div class="timeline">
     <div class="item"><div class="when">01/2025 – present</div><div><h3>M.Sc. Mechanical Engineering, McGill University</h3><div class="org">Thesis expected 11/2026</div></div></div>
     <div class="item"><div class="when">09/2018 – 09/2023</div><div><h3>B.Sc. Mechanical Engineering, minor in Computer Engineering</h3><div class="org">Amirkabir University of Technology</div></div></div>
