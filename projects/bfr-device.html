@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blood flow restriction training device · Mostafa Kaviri</title>
-<meta name="description" content="A medical device prototype, from circuit to app.">
+<title>Blood flow restriction training device · Mostafa Kaviri, Robotics &amp; Control Engineer</title>
+<meta name="description" content="Blood flow restriction medical device: full electrical design, STM32/ESP32 FreeRTOS firmware and desktop app.">
+<link rel="canonical" href="https://mostafakaviri.com/projects/bfr-device.html">
+<meta property="og:url" content="https://mostafakaviri.com/projects/bfr-device.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blood flow restriction training device · Mostafa Kaviri, Robotics &amp; Control Engineer">
+<meta property="og:description" content="Blood flow restriction medical device: full electrical design, STM32/ESP32 FreeRTOS firmware and desktop app.">
+<meta property="og:image" content="https://mostafakaviri.com/images/bfr-device.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23003399%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EMK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,7 +75,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
   <div class="ptitle"><div class="eyebrow">R&amp;D Robotics Engineer · New Technologies Research Center, Amirkabir University · 2021–2022</div><h1>Blood flow restriction training device</h1><p class="lead">A medical device prototype, from circuit to app.</p></div>
   <div class="pgrid">
     <div class="block"><h2>The problem</h2><p>Blood flow restriction training calls for cuff pressure set for each person from their own limb occlusion pressure, rather than one fixed value. The engineering task was a device that estimates that pressure and sets the cuff accordingly.</p></div>
-    <div class="block"><h2>What I did</h2><ul><li>Designed the cuff inflation mechanism and mechanical frame</li><li>Designed the analog circuits and pressure-signal processing to estimate limb occlusion pressure</li><li>Developed embedded firmware for STM32 and ESP32</li><li>Developed the desktop control application</li></ul></div>
+    <div class="block"><h2>What I did</h2><ul><li>Built the prototype in a small team, from the inflation mechanism for the limb cuffs to hands-on fabrication and assembly of the complete device</li><li>Designed the device's entire electrical system: analog circuits and pressure-signal processing to estimate limb occlusion pressure, and the electronic board, which I fabricated and assembled</li><li>Developed STM32 (CubeMX) and ESP32 firmware on FreeRTOS, interfacing with sensors over SPI, I2C and UART</li><li>Developed the desktop control application with object-oriented design</li><li>Contributed to the mechanical frame in CAD (including CATIA)</li></ul></div>
   </div>
   <div class="block" style="margin-top:28px"><h2>Results</h2><p>A working prototype, built in a small team, designed to set individualized cuff pressures from each user's estimated limb occlusion pressure. It runs from its own touchscreen or from a desktop app.</p></div>
   <div class="media">
@@ -79,7 +86,7 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 </div>
 <div class="g2">
 <figure><img src="../images/bfr-screen.png" alt="Device touchscreen showing pressure, percentage and limb occlusion pressure" loading="lazy"><figcaption>The device screen: cuff pressure, target percentage and the measured limb occlusion pressure.</figcaption></figure>
-<figure><img src="../images/bfr-app.png" alt="Desktop control application" loading="lazy"><figcaption>The desktop control app.</figcaption></figure>
+<figure><img src="../images/bfr-app.png" alt="Desktop control application showing cuff pressure controls and readings" loading="lazy"><figcaption>The desktop control app.</figcaption></figure>
 </div>
 <h3 class="mh">Signal processing</h3>
 <p class="mp">The limb occlusion pressure is estimated from the cuff pressure as it deflates. The raw signal is filtered, then the small pulses riding on it are separated out.</p>
@@ -91,6 +98,6 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
   </div>
   <div class="next"><a href="fish-robot.html">← Fish-inspired swimming robot</a><a href="wheelchair.html">Autonomous smart wheelchair →</a></div>
 </main>
-<footer>© 2026 Mostafa Kaviri · <a href="mailto:mostafa.kaviri1378@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a></footer>
+<footer>© 2026 Mostafa Kaviri · <a href="mailto:mostafa.kaviri1378@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a> · <a href="https://github.com/mostafakaviri">GitHub</a></footer>
 </body>
 </html>

@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Physical human–robot co-manipulation · Mostafa Kaviri</title>
-<meta name="description" content="How a cobot can share a load with a person who has tremor.">
+<title>Physical human–robot co-manipulation · Mostafa Kaviri, Robotics &amp; Control Engineer</title>
+<meta name="description" content="Cartesian admittance–impedance control for physical human–robot co-manipulation with tremor: MuJoCo + MyoSuite, moving to a Franka FR3 arm.">
+<link rel="canonical" href="https://mostafakaviri.com/projects/co-manipulation.html">
+<meta property="og:url" content="https://mostafakaviri.com/projects/co-manipulation.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Physical human–robot co-manipulation · Mostafa Kaviri, Robotics &amp; Control Engineer">
+<meta property="og:description" content="Cartesian admittance–impedance control for physical human–robot co-manipulation with tremor: MuJoCo + MyoSuite, moving to a Franka FR3 arm.">
+<meta property="og:image" content="https://mostafakaviri.com/images/hri-sim.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23003399%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EMK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,20 +72,20 @@ footer{color:var(--muted);font-size:13px;padding:24px 0 40px;text-align:center}
 <nav id="nav"><div class="wrap"><a href="../index.html" style="color:var(--ink)"><b>Mostafa Kaviri</b></a><div class="plinks"><a href="../index.html#projects">All projects</a><a href="../index.html#contact">Contact</a></div></div></nav>
 <main class="wrap">
   <div class="crumb"><a href="../index.html#projects">← All projects</a></div>
-  <div class="ptitle"><div class="eyebrow">M.Sc. thesis · McGill University, NeuRoc Lab · 2025–present</div><h1>Physical human–robot co-manipulation</h1><p class="lead">How a cobot can share a load with a person who has tremor.</p></div>
+  <div class="ptitle"><div class="eyebrow">M.Sc. thesis · McGill University, NeuRoc Lab · 2025–present</div><h1>Physical human–robot co-manipulation</h1><p class="lead">How a cobot can share a load with a person who has tremor.</p><p class="sub" style="margin:0">Thesis: <i>Load Support, Intent Following and Tremor Attenuation in Physical Human–Robot Co-Manipulation</i>, supervised by Asst. Prof. Guillaume Durandau.</p></div>
   <div class="pgrid">
     <div class="block"><h2>The problem</h2><p>People with tremor struggle to hold and move objects steadily. A collaborative robot can carry part of the load, but it must follow where the person wants to go and damp the tremor at the same time, and those goals pull against each other.</p></div>
-    <div class="block"><h2>What I did</h2><ul><li>Designed and implemented Cartesian admittance–impedance control for a simulated Sawyer cobot</li><li>Physically coupled in MuJoCo to a MyoSuite musculoskeletal arm model</li><li>Swept the controller gains across object loads and tremor conditions</li><li>Mapped how the gains trade off load support, intent following and tremor attenuation</li></ul></div>
+    <div class="block"><h2>What I did</h2><ul><li>Tuned a Cartesian admittance–impedance controller on a simulated robot arm</li><li>Physically coupled the robot in MuJoCo to a MyoSuite musculoskeletal arm model</li><li>Used reinforcement learning to train the musculoskeletal model to move and perform the task</li><li>Swept the controller gains across object loads and tremor conditions</li><li>Mapped how the gains trade off load support, intent following and tremor attenuation</li><li>Now applying the co-manipulation controller to a real Franka Research 3 (FR3) arm (in progress)</li></ul></div>
   </div>
-  <div class="block" style="margin-top:28px"><h2>Results</h2><p>In simulation, with suitable gains, the controller let the human model support objects it could not hold alone and reduced tremor-induced oscillation of the object, while still following the intended motion. The quantitative results are in manuscripts in preparation, and the work is moving to a physical robot.</p></div>
+  <div class="block" style="margin-top:28px"><h2>Results</h2><p>In simulation, with suitable gains, the controller let the human model support objects it could not hold alone and reduced tremor-induced oscillation of the object, while still following the intended motion. The simulation framework appears in a paper accepted at ICNR. The quantitative results are in two manuscripts under submission to IEEE Robotics and Automation Letters, and the controller is now being applied to a real Franka Research 3 arm.</p></div>
   <div class="media">
 <figure><video src="../videos/hri-05_slowmo.mp4" poster="../videos/hri-05_slowmo.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>Tremor comparison at 0.1× playback speed. Left: the human model alone. Right: with the cobot sharing the object.</figcaption></figure>
 <figure><video src="../videos/hri-06b_load_surplus_seed7.mp4" poster="../videos/hri-06b_load_surplus_seed7.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>A heavier 2&nbsp;kg object. Without the robot's load support (left) the human model cannot hold the object up; with support (right) it can.</figcaption></figure>
 <figure><video src="../videos/hri-03_controller.mp4" poster="../videos/hri-03_controller.jpg" controls muted loop playsinline preload="metadata"></video><figcaption>The human model and the cobot moving the object together along the task path.</figcaption></figure>
-<figure><img src="../images/hri-sim.jpg" alt="The coupled human-robot simulation in MuJoCo"><figcaption>The coupled human–robot simulation in MuJoCo with MyoSuite.</figcaption></figure>
+<figure><img src="../images/hri-sim.jpg" alt="Simulated robot arm physically coupled to a MyoSuite musculoskeletal arm model in MuJoCo, holding a shared object"><figcaption>The coupled human–robot simulation in MuJoCo with MyoSuite.</figcaption></figure>
   </div>
   <div class="next"><a href="wheelchair.html">← Autonomous smart wheelchair</a><a href="quadruped.html">Real-time MPC for a quadruped robot →</a></div>
 </main>
-<footer>© 2026 Mostafa Kaviri · <a href="mailto:mostafa.kaviri1378@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a></footer>
+<footer>© 2026 Mostafa Kaviri · <a href="mailto:mostafa.kaviri1378@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/mostafa-kaviri/">LinkedIn</a> · <a href="https://github.com/mostafakaviri">GitHub</a></footer>
 </body>
 </html>
